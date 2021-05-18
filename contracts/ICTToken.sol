@@ -37,12 +37,12 @@ contract ICTToken is ERC777, Ownable {
 
     constructor() ERC777(_tokenName, _tokenSymbol, new address[](0)) {
         // _mint(msg.sender, initialSupply * 10**18, "", "");
+        _mint(_tokenOfferAddress, _tokenToOffer * 10**18, "", "");
+        _mint(_tokenReserveAddress, _tokenReserve * 10**18, "", "");
         _mint(_tokenDistributeAddres1, _tokenToDistribute1 * 10**18, "", "");
         _mint(_tokenDistributeAddres2, _tokenToDistribute2 * 10**18, "", "");
         _mint(_tokenDistributeAddres3, _tokenToDistribute3 * 10**18, "", "");
         _mint(_tokenDistributeAddres4, _tokenToDistribute4 * 10**18, "", "");
-        _mint(_tokenOfferAddress, _tokenToOffer * 10**18, "", "");
-        _mint(_tokenReserveAddress, _tokenReserve * 10**18, "", "");
         transferOwnership(msg.sender);
     }
 
